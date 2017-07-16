@@ -13,7 +13,7 @@ namespace FirstApplication
         {
             InitializeComponent();
 
-            MainPage = new FirstApplication.MainPage();
+            MainPage = new Page1();
         }
 
         protected override void OnStart()
