@@ -3,9 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FirstApplication"
              x:Class="FirstApplication.MainPage">
+    <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Label x:Name="MainLabel" Text="Welcome to Xamarin Forms!" WidthRequest="160" HorizontalTextAlignment="Center"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant =-80}"/>
+        <Entry x:Name="ResultInput" Text="Entry" 
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=MainLabel,Property=Y,Factor=1,Constant=20}"
+            HorizontalOptions="Center"/>
+        <Label x:Name="ResultLabel" Text="Result: " VerticalOptions="Start"  HorizontalOptions="Center"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ResultInput,Property=Y,Factor=4,Constant=20}"/>
+        <Button  BorderRadius="25" x:Name="SubmitBtn" Clicked="Entry_TextChanged" 
+                 WidthRequest="70" HeightRequest="40" Text="Submit"
+                 BackgroundColor="White"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5,Constant=-30}"  
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ResultLabel,Property=Y,Factor=1,Constant=20}"/>
+        <!--<Button BorderRadius="35" x:Name="imageCircleBack"
+            BackgroundColor="Maroon" 
+                HeightRequest="70" WidthRequest="70"
+                
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant = -35}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=70}" />-->
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    </RelativeLayout>
 </ContentPage>

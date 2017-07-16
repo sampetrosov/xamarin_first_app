@@ -13,5 +13,11 @@ namespace FirstApplication
         {
             InitializeComponent();
         }
+
+        private void Entry_TextChanged(object sender, EventArgs e)
+        {
+            ResultLabel.Text = ResultInput.Text;
+            (sender as Button).Text = ResultInput.Text;
+        }
     }
 }
